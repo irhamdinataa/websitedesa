@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminBeritaController;
+use App\Http\Controllers\AdminKategoriController;
+use App\Http\Controllers\AdminSliderController;
+use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -15,10 +19,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
+Route::get('/', [BerandaController::class, 'index']);
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -27,3 +28,9 @@ Route::get('/contact', function () {
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
+Route::resource('/admin/slider', AdminSliderController::class);
+
+Route::get('/admin/berita/slug', [AdminBeritaController::class, 'slug']);
+Route::resource('/admin/berita', AdminBeritaController::class);
+
+route::resource('/admin/kategori', AdminKategoriController::class);

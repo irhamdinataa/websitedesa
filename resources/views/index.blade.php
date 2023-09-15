@@ -1,60 +1,37 @@
 @extends('layouts.main')
 
 @section('content')
-      <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+<section id="hero">
+  <div class="hero-container">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-        <div class="carousel-inner" role="listbox">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url('assets/img/slide/slide-1.jpg');">
-            <div class="carousel-container">
-              <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">Website Desa <span>Kragilan</span></h2>
-                <p class="animate__animated animate__fadeInUp">Desa Kragilan adalah desa yang terletak di kecamatan Gebang, Kabupaten Purworejo, Provinsi Jawa Tengah, Kode Pos 54191</p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Baca Selengkapnya</a>
-              </div>
+      <div class="carousel-inner" role="listbox">
+        @foreach ($sliders as $key => $slider)
+        <div class="carousel-item{{ $key === 0 ? ' active' : '' }}" style="background-image: url({{ asset('storage/' . $slider->img_slider) }});">
+          <div class="carousel-container">
+            <div class="carousel-content container">
+              <h2 class="animate__animated animate__fadeInDown">{{ $slider->judul }}</h2>
+              <p class="animate__animated animate__fadeInUp">{{ $slider->deskripsi }}</p>
+              <a href="{{ $slider->link_btn }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Baca Selengkapnya</a>
             </div>
           </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url('assets/img/slide/slide-2.jpg');">
-            <div class="carousel-container">
-              <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">Sejarah Desa</h2>
-                <p class="animate__animated animate__fadeInUp">Desa Kragilan adalah desa yang terletak di kecamatan Gebang, Kabupaten Purworejo, Provinsi Jawa Tengah, Kode Pos 54191</p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Baca Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url('assets/img/slide/slide-3.jpg');">
-            <div class="carousel-container">
-              <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">Visi & Misi</h2>
-                <p class="animate__animated animate__fadeInUp">Visi & Misi desa Kragilana dalah Terwujudnya masyarakat Desa Kragilan yang Bersih, Relegius, Sejahtera, Rapi dan Indah </p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Baca Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-
         </div>
-
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
+        @endforeach
       </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
     </div>
-  </section><!-- End Hero -->
+  </div>
+</section><!-- End Hero -->
+
 
       <!-- ======= Services Section ======= -->
       <section id="services" class="services">
@@ -94,7 +71,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up">
             <div class="count-box news-box">
-              <img src="assets/img/slide/slide-3.jpg" alt="Gambar Berita">
+              <img src="{{ asset('storage/img-slider/slide-1.jpg') }}" alt="Gambar Berita">
               <h5 class="news-title">Mahasiswa KKN UMPWR melakukan pelatihan penggunaan Website Sistem Informasi Desa</h5>
               <p class="news-description">Deskripsi berita atau informasi tambahan dapat ditambahkan di sini.</p>
               <div class="news-date">Tanggal Post : 11 September 2023</div>
@@ -105,7 +82,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up">
             <div class="count-box news-box">
-              <img src="assets/img/slide/slide-2.jpg" alt="Gambar Berita">
+              <img src="{{ asset('storage/img-slider/slide-2.jpg') }}" alt="Gambar Berita">
               <h5 class="news-title">pelatihan penggunaan Website Sistem Informasi Desa</h5>
               <p class="news-description">Deskripsi berita atau informasi tambahan dapat ditambahkan di sini.</p>
               <div class="news-date">Tanggal Post : 11 September 2023</div>
@@ -116,7 +93,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up">
             <div class="count-box news-box">
-              <img src="assets/img/slide/slide-1.jpg" alt="Gambar Berita">
+              <img src="{{ asset('storage/img-slider/slide-3.jpg') }}" alt="Gambar Berita">
               <h5 class="news-title">Mahasiswa KKN UMPWR melakukan pelatihan penggunaan Website Sistem Informasi Desa</h5>
               <p class="news-description">Deskripsi berita atau informasi tambahan dapat ditambahkan di sini.</p>
               <div class="news-date">Tanggal Post : 11 September 2023</div>
