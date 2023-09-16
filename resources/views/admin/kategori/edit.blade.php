@@ -21,8 +21,15 @@
                 @csrf
                 <div class="mb-3">
                     <label for="kategori" class="form-label">Nama Kategori <span style="color: red">*</span></label>
-                    <input type="text" class="form-control" name="kategori" value="{{ old('kategori', $kategori->kategori) }}">
+                    <input type="text" class="form-control" name="kategori" id="kategori" value="{{ old('kategori', $kategori->kategori) }}">
                     @error('kategori')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="slug" class="form-label">Slug <span style="color: red">*</span></label>
+                    <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug', $kategori->slug) }}">
+                    @error('slug')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
@@ -33,4 +40,15 @@
     </div>
 </div>
 
+<!-- Generate Slug Otomatis -->
+<script>
+    const kategori      = document.querySelector('#kategori');
+    const slug          = document.querySelector('#slug');
+
+    kategori.addEventListener('change', function(){
+        fetch('/admin/kategori/slug?kategori=' + kategori.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+    });
+</script>
 @endsection

@@ -6,6 +6,7 @@ use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class AdminKategoriController extends Controller
 {
@@ -35,8 +36,11 @@ class AdminKategoriController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'kategori'  => 'required',
+            'slug'      => 'required|unique:kategoris'
         ], [
-            'kategori.required' => 'Kategori wajib di isi !'
+            'kategori.required' => 'Kategori wajib di isi !',
+            'slug.required'     => 'Wajib ada slug !',
+            'slug.unique'       => 'Slug sudah digunakan !'
         ]);
 
         if($validator->fails()){
@@ -47,6 +51,7 @@ class AdminKategoriController extends Controller
 
         Kategori::create([
             'kategori'  => $request->kategori,
+            'slug'      => $request->slug,
             'user_id'   => auth()->user()->id
         ]);
         
@@ -69,9 +74,15 @@ class AdminKategoriController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'kategori'  => 'required',
+            'slug'      => 'required',
         ], [
-            'kategori.required' => 'Kategori wajib di isi !'
+            'kategori.required' => 'Kategori wajib di isi !',
+            'slug.required'     => 'Wajib menambahkan slug !',
         ]);
+
+        if($request->slug != $kategori->slug){
+            $kategori->slug  = 'required|unique:kategoris';
+        }
 
         if($validator->fails()){
             return redirect('/admin/' . $kategori->id . '/edit')
@@ -80,7 +91,8 @@ class AdminKategoriController extends Controller
         }
 
         $kategori->update([
-            'kategori'  => $request->kategori
+            'kategori'  => $request->kategori,
+            'slug'      => $request->slug,
         ]);
 
         return redirect('/admin/kategori')->with('success', 'Berhasil mengedit data kategori !');
@@ -93,5 +105,14 @@ class AdminKategoriController extends Controller
     {
         $kategori->delete();
         return redirect('/admin/kategori')->with('success', 'Berhasil menghapus data kategori !');
+    }
+
+    /**
+     * Generate slug / permalink by kategori.
+     */
+    public function slug(Request $request)
+    {
+        $slug = SlugService::createSlug(Kategori::class, 'slug', $request->kategori);
+        return response()->json(['slug' => $slug]);
     }
 }

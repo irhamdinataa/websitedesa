@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Berita;
+use App\Models\Kategori;
 use App\Models\PostStatus;
 use App\Models\User;
 use App\Models\Slider;
@@ -48,5 +50,15 @@ class DatabaseSeeder extends Seeder
             'status'    => 'publish'
         ]);
 
+        Kategori::create([
+            'kategori'  => 'Teknologi',
+            'slug'      => 'teknologi',
+            'user_id'   => 1
+        ]);
+        Kategori::create([
+            'kategori'  => 'Kesenian',
+            'slug'      => 'kesenian',
+            'user_id'   => 1
+        ]);
     }
 }

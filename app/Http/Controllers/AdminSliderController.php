@@ -55,7 +55,8 @@ class AdminSliderController extends Controller
     
             $path       = 'img-slider/';
             $file       = $request->file('img_slider');
-            $fileName   = $file->getClientOriginalName();
+            $extension  = $file->getClientOriginalExtension(); 
+            $fileName   = uniqid() . '.' . $extension; 
             $img_slider = $file->storeAs($path, $fileName, 'public');
         } else {
             $validator = Validator::make($request->all(), [
@@ -89,11 +90,4 @@ class AdminSliderController extends Controller
         return redirect('/admin/slider')->with('success', 'Berhasil memperbarui slider');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

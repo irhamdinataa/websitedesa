@@ -44,7 +44,7 @@
                         <div class="card-body">
                             <p>Slider {{ $loop->iteration }}</p>
                             <h5 class="card-title">{{ $slider->judul }}</h5>
-                            <a href="/slider/{{ $slider->id }}/edit" type="button" class="btn btn-warning">Edit</a>
+                            <a href="/admin/slider/{{ $slider->id }}/edit" type="button" class="btn btn-warning">Edit</a>
                         </div>
                     </div>
                 </div>

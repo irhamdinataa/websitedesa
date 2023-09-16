@@ -32,83 +32,66 @@
   </div>
 </section><!-- End Hero -->
 
+<!-- ======= Services Section ======= -->
+<section id="services" class="services">
+  <div class="container" data-aos="fade-up">
 
-      <!-- ======= Services Section ======= -->
-      <section id="services" class="services">
-        <div class="container" data-aos="fade-up">
-
-          <div class="row">
-            <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bi bi-bar-chart-line-fill"></i></div>
-              <h4 class="title"><a href="">Statistik</a></h4>
-            </div>
-            <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bi bi-globe-asia-australia"></i></div>
-              <h4 class="title"><a href="">Peta Desa</a></h4>
-            </div>
-            <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bi bi-shop"></i></div>
-              <h4 class="title"><a href="">Bursa UMKM</a></h4>
-            </div>
-            <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bi bi-telephone-forward"></i></div>
-              <h4 class="title"><a href="">Pengaduan</a></h4>
-            </div>
-          </div>
-          
-        </div>
-      </section><!-- End Services Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <section class="counts section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Berita Desa</h2>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up">
-            <div class="count-box news-box">
-              <img src="{{ asset('storage/img-slider/slide-1.jpg') }}" alt="Gambar Berita">
-              <h5 class="news-title">Mahasiswa KKN UMPWR melakukan pelatihan penggunaan Website Sistem Informasi Desa</h5>
-              <p class="news-description">Deskripsi berita atau informasi tambahan dapat ditambahkan di sini.</p>
-              <div class="news-date">Tanggal Post : 11 September 2023</div>
-              <div class="news-divider"></div>
-              <button type="button" class="btn btn-link">Selengkapnya</button>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up">
-            <div class="count-box news-box">
-              <img src="{{ asset('storage/img-slider/slide-2.jpg') }}" alt="Gambar Berita">
-              <h5 class="news-title">pelatihan penggunaan Website Sistem Informasi Desa</h5>
-              <p class="news-description">Deskripsi berita atau informasi tambahan dapat ditambahkan di sini.</p>
-              <div class="news-date">Tanggal Post : 11 September 2023</div>
-              <div class="news-divider"></div>
-              <button type="button" class="btn btn-link">Selengkapnya</button>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up">
-            <div class="count-box news-box">
-              <img src="{{ asset('storage/img-slider/slide-3.jpg') }}" alt="Gambar Berita">
-              <h5 class="news-title">Mahasiswa KKN UMPWR melakukan pelatihan penggunaan Website Sistem Informasi Desa</h5>
-              <p class="news-description">Deskripsi berita atau informasi tambahan dapat ditambahkan di sini.</p>
-              <div class="news-date">Tanggal Post : 11 September 2023</div>
-              <div class="news-divider"></div>
-              <button type="button" class="btn btn-link">Selengkapnya</button>
-            </div>
-          </div>
-          
-
-          <div class="button" style="text-align: center">
-            <a class="btn btn-primary mx-auto" href="/pengumuman" role="button">Lihat Semua</a>
-          </div>
-          
-        </div>
-
+    <div class="row">
+      <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
+        <div class="icon"><i class="bi bi-bar-chart-line-fill"></i></div>
+        <h4 class="title"><a href="">Statistik</a></h4>
       </div>
-    </section><!-- End Counts Section -->
+      <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
+        <div class="icon"><i class="bi bi-globe-asia-australia"></i></div>
+        <h4 class="title"><a href="">Peta Desa</a></h4>
+      </div>
+      <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
+        <div class="icon"><i class="bi bi-shop"></i></div>
+        <h4 class="title"><a href="">Bursa UMKM</a></h4>
+      </div>
+      <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
+        <div class="icon"><i class="bi bi-telephone-forward"></i></div>
+        <h4 class="title"><a href="">Pengaduan</a></h4>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="counts section-bg">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Berita Desa</h2>
+    </div>
+
+    <div class="row">
+
+      @foreach ($beritas as $berita)
+            <div class="col-lg-4 col-md-6 mb-3" data-aos="fade-up">
+                <div class="count-box news-card">
+                    <div class="card">
+                        <img src="{{ asset('storage/' . $berita->gambar) }}" alt="Gambar Berita" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $berita->judul }}</h5>
+                            <p class="card-text">{{ $berita->excerpt }}</p>
+                            <div class="news-date">{{ $berita->created_at->diffForHumans() }}</div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-link float-end">Selengkapnya</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+
+     
+      <div class="button" style="text-align: center">
+        <a class="btn btn-primary mx-auto" href="/berita" role="button">Lihat Semua</a>
+      </div>
+      
+    </div>
+
+  </div>
+</section>
 @endsection

@@ -4,9 +4,11 @@ use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\AdminKategoriController;
 use App\Http\Controllers\AdminSliderController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\kategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/berita/{beritas:slug}', [BeritaController::class, 'berita']);
+Route::get('/berita', [BeritaController::class, 'index']);
+
+Route::get('/kategori/{kategori:slug}', [kategoriController::class, 'index']);
 
 Auth::routes();
 
@@ -33,4 +39,5 @@ Route::resource('/admin/slider', AdminSliderController::class);
 Route::get('/admin/berita/slug', [AdminBeritaController::class, 'slug']);
 Route::resource('/admin/berita', AdminBeritaController::class);
 
+Route::get('/admin/kategori/slug', [AdminKategoriController::class, 'slug']);
 route::resource('/admin/kategori', AdminKategoriController::class);

@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="card-body">
-            <form method="POST" action="/slider/{{ $slider->id }}" enctype="multipart/form-data">
+            <form method="POST" action="/admin/slider/{{ $slider->id }}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
 

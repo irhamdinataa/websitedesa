@@ -24,7 +24,7 @@
 
             <div class="row">
                 <div class="table-responsive">
-                    <table id="table_id" class="table table-striped table-hover">
+                    <table id="table_id" class="table display">
                         <thead>
                             <tr>
                                 <th>No</th>

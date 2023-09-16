@@ -32,4 +32,9 @@ class Berita extends Model
     {
         return $this->belongsTo(PostStatus::class);
     }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
 }
