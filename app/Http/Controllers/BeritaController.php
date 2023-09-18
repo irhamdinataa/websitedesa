@@ -18,14 +18,16 @@ class BeritaController extends Controller
 
     public function berita($slug)
     {
-        $berita = Berita::where('slug', $slug)->with(['user', 'status', 'kategori'])->first();
+        $berita = Berita::where('slug', $slug)->with(['user', 'status', 'kategori', 'comments'])->first();
         $berita->views += 1;
         $berita->save();
 
         return view('berita.detail', [
             'berita'        => $berita,
-            'beritaPopuler' => Berita::orderBy('views', 'desc')->take(5)->get(),
-            'kategories'    => Kategori::all()
+            'beritaPopuler' => Berita::where('status_id', 2)->orderBy('views', 'desc')->take(5)->get(),
+            'kategories'    => Kategori::all(),
         ]);
     }
+
+    
 }

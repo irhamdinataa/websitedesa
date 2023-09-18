@@ -56,6 +56,10 @@
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>
 
+  <!-- Sweet Alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  @include('sweetalert::alert')
+
 </body>
 
 </html>

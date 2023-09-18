@@ -104,6 +104,14 @@
                 </a>
               </li>
               <li class="sidebar-item">
+                <a class="sidebar-link" href="/admin/komentar" aria-expanded="false">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-point"></i>
+                  </div>
+                  <span class="hide-menu">Komentar</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
                 <a href="/admin/kategori" class="sidebar-link">
                   <div class="round-16 d-flex align-items-center justify-content-center">
                     <i class="ti ti-point"></i>

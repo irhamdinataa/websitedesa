@@ -12,10 +12,10 @@
           <li><a class="nav-link scrollto active" href="/">Beranda</a></li>
           <li class="dropdown"><a href="#"><span>Profil Desa</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Wilayah</a></li>
-              <li><a href="#">Sejarah</a></li>
-              <li><a href="#">Visi & Misi</a></li>
-              <li><a href="#">Perangkat Desa</a></li>
+              <li><a href="/wilayah">Wilayah</a></li>
+              <li><a href="/sejarah">Sejarah</a></li>
+              <li><a href="/visi-misi">Visi & Misi</a></li>
+              <li><a href="/perangkat-desa">Perangkat Desa</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/berita">Berita</a></li>
