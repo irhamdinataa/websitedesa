@@ -85,7 +85,7 @@ class AdminKategoriController extends Controller
         }
 
         if($validator->fails()){
-            return redirect('/admin/' . $kategori->id . '/edit')
+            return redirect('/admin/kategori' . $kategori->id . '/edit')
                 ->withErrors($validator)
                 ->withInput();
         }

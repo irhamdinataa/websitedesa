@@ -16,6 +16,7 @@
               <li><a href="/sejarah">Sejarah</a></li>
               <li><a href="/visi-misi">Visi & Misi</a></li>
               <li><a href="/perangkat-desa">Perangkat Desa</a></li>
+              <li><a href="/peta-desa">Peta Desa</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/berita">Berita</a></li>

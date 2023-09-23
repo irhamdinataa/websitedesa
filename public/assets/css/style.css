@@ -124,6 +124,8 @@ h6,
   margin-top: 70px;
 }
 
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -892,6 +894,78 @@ section {
 .services .description {
   line-height: 24px;
   font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# Our Team
+--------------------------------------------------------------*/
+ .member {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+ .member .pic {
+  border-radius: 4px;
+  overflow: hidden;
+}
+ .member img {
+  transition: all ease-in-out 0.4s;
+}
+ .member:hover img {
+  transform: scale(1.1);
+}
+ .member .member-info {
+  position: absolute;
+  bottom: -48px;
+  left: 20px;
+  right: 20px;
+  background: linear-gradient(360deg, rgb(92, 118, 141) 0%, rgba(92, 118, 141, 0.9) 35%, rgba(140, 167, 191, 0.8) 100%);
+  padding: 15px 0;
+  border-radius: 4px;
+}
+ .member h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+}
+ .member h4::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #fff;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+ .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+  color: #fff;
+}
+ .member .social {
+  margin-top: 15px;
+}
+ .member .social a {
+  transition: color 0.3s;
+  color: #fff;
+}
+ .member .social a:hover {
+  color: #9eccf4;
+}
+ .member .social i {
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+@media (max-width: 992px) {
+ .member {
+    margin-bottom: 100px;
+  }
 }
 
 /*--------------------------------------------------------------

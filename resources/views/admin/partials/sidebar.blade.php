@@ -84,6 +84,14 @@
                   <span class="hide-menu">Perangkat Desa</span>
                 </a>
               </li>
+              <li class="sidebar-item">
+                <a href="/admin/peta-desa" class="sidebar-link">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-point"></i>
+                  </div>
+                  <span class="hide-menu">Peta Desa</span>
+                </a>
+              </li>
             </ul>
           </li>
 
@@ -117,6 +125,41 @@
                     <i class="ti ti-point"></i>
                   </div>
                   <span class="hide-menu">Kategori</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
+              <span class="d-flex">
+                <i class="ti ti-chart-bar"></i>
+              </span>
+              <span class="hide-menu">Data Desa</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="/admin/agama" aria-expanded="false">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-point"></i>
+                  </div>
+                  <span class="hide-menu">Agama</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="/admin/jenis-kelamin" aria-expanded="false">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-point"></i>
+                  </div>
+                  <span class="hide-menu">Jenis Kelamin</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="/admin/pekerjaan" class="sidebar-link">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-point"></i>
+                  </div>
+                  <span class="hide-menu">Pekerjaan</span>
                 </a>
               </li>
             </ul>

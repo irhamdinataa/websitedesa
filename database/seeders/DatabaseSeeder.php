@@ -4,14 +4,19 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Peta;
 use App\Models\User;
+use App\Models\Agama;
 use App\Models\Berita;
 use App\Models\Slider;
 use App\Models\Sejarah;
 use App\Models\Wilayah;
 use App\Models\Kategori;
-use App\Models\PostStatus;
 use App\Models\VisiMisi;
+use App\Models\Pekerjaan;
+use App\Models\PostStatus;
+use App\Models\JenisKelamin;
+use App\Models\PerangkatDesa;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -82,6 +87,99 @@ class DatabaseSeeder extends Seeder
                             - Meningkatkan kualitas sumber daya manusia melalui pendidikan dan kesehatan
                             - Meningkatkan kesadaran masyarakat akan pentingnya kelestarian lingkungan',
             'user_id'   => 1
+        ]);
+
+        PerangkatDesa::create([
+            'nama'      => 'Dwi Purnomo',
+            'foto'      => 'img-perangkat/team-1.jpg',
+            'jabatan'   => 'Kepala Desa',
+            'user_id'   => 1
+        ]);
+        PerangkatDesa::create([
+            'nama'      => 'Cahyo Anggoro',
+            'foto'      => 'img-perangkat/team-2.jpg',
+            'jabatan'   => 'Sekretaris Desa',
+            'user_id'   => 1
+        ]);
+        PerangkatDesa::create([
+            'nama'      => 'Ahmad Mubarok',
+            'foto'      => 'img-perangkat/team-3.jpg',
+            'jabatan'   => 'Kepala Urusan Umum',
+            'user_id'   => 1
+        ]);
+        PerangkatDesa::create([
+            'nama'      => 'Qoriatu Fajar',
+            'foto'      => 'img-perangkat/team-4.jpg',
+            'jabatan'   => 'Kepala Dusun',
+            'user_id'   => 1
+        ]);
+
+        Agama::create([
+            'agama'     => 'Islam',
+            'penganut'  => 100,
+            'user_id'   => 1
+        ]);
+        Agama::create([
+            'agama'     => 'Kristen',
+            'penganut'  => 30,
+            'user_id'   => 1
+        ]);
+        Agama::create([
+            'agama'     => 'Katolik',
+            'penganut'  => 20,
+            'user_id'   => 1
+        ]);
+        Agama::create([
+            'agama'     => 'Hindu',
+            'penganut'  => 10,
+            'user_id'   => 1
+        ]);
+        Agama::create([
+            'agama'     => 'Budha',
+            'penganut'  => 15,
+            'user_id'   => 1
+        ]);
+        Agama::create([
+            'agama'     => 'Konghucu',
+            'penganut'  => 6,
+            'user_id'   => 1
+        ]);
+
+        JenisKelamin::create([
+            'jenis_kelamin' => 'Laki-laki',
+            'jumlah'        => 70,
+            'user_id'       => 1
+        ]);
+        JenisKelamin::create([
+            'jenis_kelamin' => 'Perempuan',
+            'jumlah'        => 55,
+            'user_id'       => 1
+        ]);
+
+        Pekerjaan::create([
+            'pekerjaan'     => 'Petani',
+            'jumlah'        => 55,
+            'user_id'       => 1
+        ]);
+        Pekerjaan::create([
+            'pekerjaan'     => 'Pegawai Negeri',
+            'jumlah'        => 14,
+            'user_id'       => 1
+        ]);
+        Pekerjaan::create([
+            'pekerjaan'     => 'Belum/Tidak bekerja',
+            'jumlah'        => 10,
+            'user_id'       => 1
+        ]);
+        Pekerjaan::create([
+            'pekerjaan'     => 'Pensiunan',
+            'jumlah'        => 20,
+            'user_id'       => 1
+        ]);
+        Peta::create([
+            'judul'         => 'Peta Desa Kragilan',
+            'alamat'        => 'Kragilan, Gebang, Purworejo',
+            'user_id'       => 1
         ]);
     }
 }

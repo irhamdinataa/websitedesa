@@ -1,22 +1,31 @@
 <?php
 
-use App\Http\Controllers\AdminBeritaController;
-use App\Http\Controllers\AdminCommentController;
-use App\Http\Controllers\AdminKategoriController;
-use App\Http\Controllers\AdminSejarahController;
-use App\Http\Controllers\AdminSliderController;
-use App\Http\Controllers\AdminVisiMisiController;
-use App\Http\Controllers\AdminWilayahController;
-use App\Http\Controllers\BerandaController;
-use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\SejarahController;
-use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\WilayahController;
+use App\Http\Controllers\DataDesaController;
+use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\PetaDesaController;
+use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\AdminAgamaController;
+use App\Http\Controllers\AdminBeritaController;
+use App\Http\Controllers\AdminSliderController;
+use App\Http\Controllers\AdminCommentController;
+use App\Http\Controllers\AdminSejarahController;
+use App\Http\Controllers\AdminWilayahController;
+use App\Http\Controllers\AdminKategoriController;
+use App\Http\Controllers\AdminVisiMisiController;
+use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\AdminPekerjaanController;
+use App\Http\Controllers\AdminJenisKelaminController;
+use App\Http\Controllers\AdminPerangkatDesaController;
+use App\Http\Controllers\AdminPetaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +57,13 @@ Route::get('/sejarah', [SejarahController::class, 'index']);
 
 Route::get('/visi-misi', [VisiMisiController::class, 'index']);
 
+Route::get('/perangkat-desa', [PerangkatDesaController::class, 'index']);
+
+Route::get('/data-desa', [DataDesaController::class, 'index']);
+
+Route::get('/peta-desa', [PetaDesaController::class, 'index']);
+
+
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
@@ -73,3 +89,14 @@ Route::put('admin/sejarah/{id}', [AdminSejarahController::class, 'update']);
 Route::get('admin/visi-misi', [AdminVisiMisiController::class, 'index']);
 Route::get('admin/visi-misi/{id}/edit', [AdminVisiMisiController::class, 'edit']);
 Route::put('admin/visi-misi/{id}', [AdminVisiMisiController::class, 'update']);
+
+Route::resource('admin/perangkat-desa', AdminPerangkatDesaController::class);
+
+Route::get('/admin/peta-desa', [AdminPetaController::class, 'index']);
+Route::put('/admin/peta-desa/{id}', [AdminPetaController::class, 'update']);
+
+Route::resource('admin/agama', AdminAgamaController::class);
+
+Route::resource('admin/jenis-kelamin', AdminJenisKelaminController::class);
+
+ROute::resource('admin/pekerjaan', AdminPekerjaanController::class);

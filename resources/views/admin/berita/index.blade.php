@@ -63,7 +63,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="/{{ $berita->slug }}" type="button" class="btn btn-success mb-1"><i class="ti ti-eye-check"></i></a>
+                                                <a href="/berita/{{ $berita->slug }}" type="button" target="_blank" class="btn btn-success mb-1"><i class="ti ti-eye-check"></i></a>
                                                 <a href="/admin/berita/{{ $berita->id }}/edit" type="button" class="btn btn-warning mb-1"><i class="ti ti-edit"></i></a>
                                                 <form id="{{ $berita->id }}" action="/admin/berita/{{ $berita->id }}" method="POST" class="d-inline">
                                                     @method('delete')
@@ -108,7 +108,6 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="/{{ $berita->slug }}" type="button" class="btn btn-success mb-1"><i class="ti ti-eye-check"></i></a>
                                                 <a href="/admin/berita/{{ $berita->id }}/edit" type="button" class="btn btn-warning mb-1"><i class="ti ti-edit"></i></a>
                                                 <form id="{{ $berita->id }}" action="/admin/berita/{{ $berita->id }}" method="POST" class="d-inline">
                                                     @method('delete')
