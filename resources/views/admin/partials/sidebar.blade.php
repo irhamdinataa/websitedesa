@@ -2,8 +2,8 @@
     <!-- Sidebar scroll-->
     <div>
       <div class="brand-logo d-flex align-items-center justify-content-between">
-        <a href="./index.html" class="text-nowrap logo-img">
-          <img src="/admin/assets/images/logos/dark-logo.svg" width="180" alt="" />
+        <a href="/" class="text-nowrap logo-img">
+          <img src="/assets/img/Logo/DESA KRAGILAN.png"" width="180" alt="" />
         </a>
         <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
           <i class="ti ti-x fs-8"></i>
@@ -36,6 +36,14 @@
                 <i class="ti ti-photo-minus"></i>
               </span>
               <span class="hide-menu">Slider</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin/video-profile " aria-expanded="false">
+              <span>
+                <i class="ti ti-brand-youtube"></i>
+              </span>
+              <span class="hide-menu">Video Profile</span>
             </a>
           </li>
 
@@ -163,6 +171,24 @@
                 </a>
               </li>
             </ul>
+          </li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin/umkm " aria-expanded="false">
+              <span>
+                <i class="ti ti-building-store"></i>
+              </span>
+              <span class="hide-menu">Umkm Desa</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin/kontak " aria-expanded="false">
+              <span>
+                <i class="ti ti-mail-forward"></i>
+              </span>
+              <span class="hide-menu">Kontak</span>
+            </a>
           </li>
           
         </ul>

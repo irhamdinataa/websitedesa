@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Peta;
+use App\Models\Umkm;
 use App\Models\User;
 use App\Models\Agama;
 use App\Models\Berita;
@@ -16,7 +17,9 @@ use App\Models\VisiMisi;
 use App\Models\Pekerjaan;
 use App\Models\PostStatus;
 use App\Models\JenisKelamin;
+use App\Models\Kontak;
 use App\Models\PerangkatDesa;
+use App\Models\VideoProfil;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -180,6 +183,18 @@ class DatabaseSeeder extends Seeder
             'judul'         => 'Peta Desa Kragilan',
             'alamat'        => 'Kragilan, Gebang, Purworejo',
             'user_id'       => 1
+        ]);
+
+        Kontak::create([
+            'lokasi'    => 'Kragilan, Gebang, Purworejo',
+            'email'     => 'purnomodwi174@gmail.com',
+            'no_hp'     => '081229248179',
+            'user_id'   => 1
+        ]);
+
+        VideoProfil::create([
+            'url_video' => 'https://www.youtube.com/embed/CCDemVVMzOo',
+            'user_id'   => 1
         ]);
     }
 }

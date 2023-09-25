@@ -47,16 +47,32 @@
       </div>
       <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
         <div class="icon"><i class="bi bi-shop"></i></div>
-        <h4 class="title"><a href="">UMKM Desa</a></h4>
+        <h4 class="title"><a href="/umkm">UMKM Desa</a></h4>
       </div>
       <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
         <div class="icon"><i class="bi bi-telephone-forward"></i></div>
-        <h4 class="title"><a href="">Pengaduan</a></h4>
+        <h4 class="title"><a href="/kontak">Pengaduan</a></h4>
       </div>
     </div>
     
   </div>
 </section>
+
+<!-- ======= Video Section ======= -->
+<section id="services" class="services mx-4">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Video Profile</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <iframe width="100%" height="500" src="{{ $videoProfil->url_video }}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="counts section-bg">
   <div class="container">

@@ -4,7 +4,9 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="/">Desa Kragilan</a></h1>
+        <h1><a href="/">
+            <img src="assets/img/Logo/DESA KRAGILAN.png" alt="" style="">
+        </a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -19,9 +21,10 @@
               <li><a href="/peta-desa">Peta Desa</a></li>
             </ul>
           </li>
+          <li><a class="nav-link scrollto" href="/umkm">Umkm</a></li>
           <li><a class="nav-link scrollto" href="/berita">Berita</a></li>
           <li><a class="nav-link scrollto" href="/data-desa">Data Desa</a></li>
-          <li><a class="nav-link scrollto" href="/contact">Kontak kami</a></li>
+          <li><a class="nav-link scrollto" href="/kontak">Kontak kami</a></li>
           <li>
             <a href="/login" class="nav-link scrollto">Masuk</a>
           </li>

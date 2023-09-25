@@ -24,8 +24,13 @@ use App\Http\Controllers\AdminVisiMisiController;
 use App\Http\Controllers\PerangkatDesaController;
 use App\Http\Controllers\AdminPekerjaanController;
 use App\Http\Controllers\AdminJenisKelaminController;
+use App\Http\Controllers\AdminKontakController;
 use App\Http\Controllers\AdminPerangkatDesaController;
 use App\Http\Controllers\AdminPetaController;
+use App\Http\Controllers\AdminUmkmController;
+use App\Http\Controllers\AdminVideoProfileController;
+use App\Http\Controllers\KontakController;
+use App\Http\Controllers\UmkmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,9 +44,6 @@ use App\Http\Controllers\AdminPetaController;
 */
 
 Route::get('/', [BerandaController::class, 'index']);
-Route::get('/contact', function () {
-    return view('contact');
-});
 
 Route::get('/berita/{beritas:slug}', [BeritaController::class, 'berita']);
 Route::get('/berita', [BeritaController::class, 'index']);
@@ -63,6 +65,10 @@ Route::get('/data-desa', [DataDesaController::class, 'index']);
 
 Route::get('/peta-desa', [PetaDesaController::class, 'index']);
 
+Route::get('/umkm', [UmkmController::class, 'index']);
+Route::get('/umkm/{umkm:slug}', [UmkmController::class, 'detail']);
+
+Route::get('/kontak', [KontakController::class, 'index']);
 
 Auth::routes();
 
@@ -99,4 +105,13 @@ Route::resource('admin/agama', AdminAgamaController::class);
 
 Route::resource('admin/jenis-kelamin', AdminJenisKelaminController::class);
 
-ROute::resource('admin/pekerjaan', AdminPekerjaanController::class);
+Route::resource('admin/pekerjaan', AdminPekerjaanController::class);
+
+Route::get('/admin/umkm/slug', [AdminUmkmController::class, 'slug']);
+Route::resource('admin/umkm', AdminUmkmController::class);
+
+Route::get('/admin/kontak', [AdminKontakController::class, 'index']);
+Route::put('/admin/kontak/{id}', [AdminKontakController::class, 'update']);
+
+Route::get('/admin/video-profile', [AdminVideoProfileController::class, 'index']);
+Route::put('/admin/video-profile/{id}', [AdminVideoProfileController::class, 'update']);
