@@ -5,7 +5,7 @@
 
       <div class="logo me-auto">
         <h1><a href="/">
-            <img src="assets/img/Logo/DESA KRAGILAN.png" alt="" style="">
+          <img src="{{ asset('storage/' . $logo->logo) }}" alt="Logo">
         </a></h1>
       </div>
 

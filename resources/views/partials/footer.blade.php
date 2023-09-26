@@ -5,12 +5,12 @@
         <div class="row">
 
           <div class="col-lg-6 col-md-6 footer-info">
-            <img src="assets/img/Logo/DESA KRAGILAN.png" alt="" style="max-height: 100px" class="mb-4">
-            <h3>Desa Kragilan</h3>
+            <img src="{{ asset('storage/' . $logo->logo) }}" class="mb-2" alt="Logo" width="250">
+            <h3>{{ $nm_desa }}</h3>
             <p>
-              Kecamatan Gebang, Kabupaten Purworejo<br><br>
-              <strong>Phone:</strong> +6281229248179<br>
-              <strong>Email:</strong> purnomodwi174@gmail.com<br>
+              Kecamatan {{ $kecamatan }}, Kabupaten {{ $kabupaten }}, <br> Provinsi {{ $provinsi }}, Kode Pos {{ $kode_pos }}<br><br>
+              <strong>Nomor HP :</strong> {{ $no_hp }}<br>
+              <strong>Email :</strong> {{ $email }}<br>
             </p>
           </div>
 

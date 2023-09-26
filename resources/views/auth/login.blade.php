@@ -11,6 +11,12 @@
                     </a>
                 </div>
                 <div class="col-md-6">
+                    @if (session()->has('password-success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('password-success') }}
+                        </div>
+                    @endif
+
                     @if($errors->any())
                         <div class="alert alert-danger" role="alert">
                             <ul>

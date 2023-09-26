@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminAgamaController;
 use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\AdminSliderController;
 use App\Http\Controllers\AdminCommentController;
+use App\Http\Controllers\AdminIdentitasSitusController;
 use App\Http\Controllers\AdminSejarahController;
 use App\Http\Controllers\AdminWilayahController;
 use App\Http\Controllers\AdminKategoriController;
@@ -27,6 +28,7 @@ use App\Http\Controllers\AdminJenisKelaminController;
 use App\Http\Controllers\AdminKontakController;
 use App\Http\Controllers\AdminPerangkatDesaController;
 use App\Http\Controllers\AdminPetaController;
+use App\Http\Controllers\AdminProfilController;
 use App\Http\Controllers\AdminUmkmController;
 use App\Http\Controllers\AdminVideoProfileController;
 use App\Http\Controllers\KontakController;
@@ -73,6 +75,7 @@ Route::get('/kontak', [KontakController::class, 'index']);
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
+
 Route::resource('/admin/slider', AdminSliderController::class);
 
 Route::get('/admin/berita/slug', [AdminBeritaController::class, 'slug']);
@@ -115,3 +118,10 @@ Route::put('/admin/kontak/{id}', [AdminKontakController::class, 'update']);
 
 Route::get('/admin/video-profile', [AdminVideoProfileController::class, 'index']);
 Route::put('/admin/video-profile/{id}', [AdminVideoProfileController::class, 'update']);
+
+Route::get('/admin/identitas-situs/', [AdminIdentitasSitusController::class, 'index']);
+Route::put('/admin/identitas-situs/{id}', [AdminIdentitasSitusController::class, 'update']);
+
+Route::get('/admin/profil/', [AdminProfilController::class, 'index']);
+Route::put('/admin/profil/{id}', [AdminProfilController::class, 'update']);
+Route::put('/admin/profil/', [AdminProfilController::class, 'changePassword']);

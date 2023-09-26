@@ -8,7 +8,9 @@ use App\Models\Peta;
 use App\Models\Umkm;
 use App\Models\User;
 use App\Models\Agama;
+use App\Models\Situs;
 use App\Models\Berita;
+use App\Models\Kontak;
 use App\Models\Slider;
 use App\Models\Sejarah;
 use App\Models\Wilayah;
@@ -16,10 +18,9 @@ use App\Models\Kategori;
 use App\Models\VisiMisi;
 use App\Models\Pekerjaan;
 use App\Models\PostStatus;
-use App\Models\JenisKelamin;
-use App\Models\Kontak;
-use App\Models\PerangkatDesa;
 use App\Models\VideoProfil;
+use App\Models\JenisKelamin;
+use App\Models\PerangkatDesa;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::create([
+            'foto'      => 'img-profil/user-1.jpg',
             'name'      => 'admin',
             'email'     => 'admin@gmail.com',
             'password'  => 1234
@@ -195,6 +197,16 @@ class DatabaseSeeder extends Seeder
         VideoProfil::create([
             'url_video' => 'https://www.youtube.com/embed/CCDemVVMzOo',
             'user_id'   => 1
+        ]);
+
+        Situs::create([
+            'logo'      => 'img-logo/DESA KRAGILAN.png',
+            'nm_desa'   => 'Desa Kragilan',
+            'kecamatan' => 'Gebang',
+            'kabupaten' => 'Purworejo',
+            'provinsi'  => 'Jawa Tengah',
+            'kode_pos'  => 54173,
+            'user_id'   =>  1
         ]);
     }
 }

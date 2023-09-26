@@ -17,8 +17,12 @@
 
   <!-- Bootstrap Icon-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
   <!-- Ck Editor -->
   <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+
+  <!-- Appex -->
+  <script src="/admin/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 </head>
 
 <body>
@@ -38,7 +42,6 @@
   <script type="text/javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="/admin/assets/js/sidebarmenu.js"></script>
   <script src="/admin/assets/js/app.min.js"></script>
-  <script src="/admin/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
   <script src="/admin/assets/libs/simplebar/dist/simplebar.js"></script>
   <script src="/admin/assets/js/dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

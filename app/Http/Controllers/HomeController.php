@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Umkm;
+use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Http\Controllers\Controller;
+use App\Models\Comment;
 
 class HomeController extends Controller
 {
@@ -23,6 +28,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $totalBerita    = Berita::count();
+        $totalProduk    = Umkm::count();
+        $viewsToday     = Berita::whereDate('created_at', Carbon::today())->sum('views');
+        $beritas        = Berita::orderBy('created_at', 'DESC')->take(10)->get();
+        $komentars      = Comment::orderBy('created_at', 'DESC')->take(10)->get();
+
+        return view('admin.dashboard', [
+            'totalBerita'    => $totalBerita,
+            'totalProduk'    => $totalProduk,
+            'viewsToday'     => $viewsToday,
+            'beritas'        => $beritas,
+            'komentars'      => $komentars
+        ]);
     }
+
 }
