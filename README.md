@@ -7,60 +7,89 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Website Portal Desa Dinamis
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Website portal desa Laravel adalah sebuah website yang dibangun menggunakan framework Laravel. Website ini dapat digunakan oleh pemerintah desa untuk mengelola berbagai informasi dan layanan kepada masyarakat.. Berikut adalah beberapa fitur dan komponen utama yang dapat ada dalam aplikasi POS berbasis web Laravel:
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# Fitur
+1. Menampilkan Beranda/Landing page
+2. Menampilkan Profil Desa 
+     - Wilayah
+    - Sejarah
+    - Visi-misi
+    - Perangkat desa
+    - Peta desa
+3. Menampilkan Umkm Desa
+4. Menampilkan Berita Desa
+5. Menampilkan Data Desa (Tabel & Grafik)
+    - Data Agama
+    - Data Pekerjaan
+    - Data Jenis kelamin
+6. Kontak
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Teknologi
 
-### Premium Partners
+Aplikasi Point of Sale dibangun menggunakan beberapa Teknologi diantaranya :
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Laravel - The PHP Framework for Web Artisans
+- JavaScript - JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.
+- Bootstrap - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. 
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Installasi
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Lakukan Clone Project/Unduh manual .
 
-## Security Vulnerabilities
+Aktifkan Xampp Control Panel, lalu akses ke http://localhost/phpmyadmin/.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Buat database dengan nama 'pos'.
 
-## License
+Jika melakukan Clone Project, rename file .env.example dengan env dan hubungkan
+database nya dengan mengisikan nama database, 'DB_DATABASE=pos'.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Kemudian, Ketik pada terminal :
+```sh
+php artisan migrate
+```
+
+Lalu ketik juga
+
+```sh
+php artisan migrate:fresh --seed
+```
+
+Jalankan aplikasi 
+
+```sh
+php artisan serve
+```
+
+Akses Aplikasi di Web browser 
+```sh
+127.0.0.1:8000
+```
+
+Demo Login :
+1. Admin
+    - email     : admin@gmail.com
+    - password  : 1234
+
+
+Demo Video : https://youtu.be/wY13QzFiipY?si=PE2Bx0N6XvA3q8de
+
+![Screenshot_1139](https://github.com/dwipurnomo12/portal-desa/assets/105181667/269695e3-e79c-45ee-94a7-d3bd260e64a9)
+![Screenshot_1138](https://github.com/dwipurnomo12/portal-desa/assets/105181667/17e3e13e-dbf9-463c-8d7a-d0ad42c5eb69)
+![Screenshot_1137](https://github.com/dwipurnomo12/portal-desa/assets/105181667/ae1020f7-232f-4585-9c0d-9e7408c30271)
+![Screenshot_1136](https://github.com/dwipurnomo12/portal-desa/assets/105181667/22bef1c0-1b78-41f8-a0ec-0fc88a2140e9)
+![Screenshot_1135](https://github.com/dwipurnomo12/portal-desa/assets/105181667/eeeee1f4-6718-4973-ac1d-44478dedafd7)
+![Screenshot_1134](https://github.com/dwipurnomo12/portal-desa/assets/105181667/e7bfc102-c141-4bcb-88cd-f54faa9a0dfc)
+![Screenshot_1133](https://github.com/dwipurnomo12/portal-desa/assets/105181667/dbbe4d82-f58c-4d43-9625-f28fb4039613)
+
