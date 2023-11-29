@@ -94,8 +94,8 @@
                             <div class="news-date">{{ $berita->created_at->diffForHumans() }}</div>
                         </div>
                         <div class="card-footer">
-                            <button type="button" class="btn btn-link float-end">Selengkapnya</button>
-                    </div>
+                          <a href="/berita/{{ $berita->slug }}" type="button" class="btn btn-link float-end">Selengkapnya</a>
+                        </div>
                     </div>
                 </div>
             </div>

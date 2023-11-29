@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('umkms', function (Blueprint $table) {
+        Schema::create('announcements', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
-            $table->string('produk');
-            $table->string('slug');
-            $table->double('harga');
-            $table->text('deskripsi');
-            $table->string('no_hp');
+            $table->string('judul');
+            $table->string('slug')->unique();
+            $table->unsignedBigInteger('views')->default(0);
+            $table->longText('excerpt');
+            $table->longText('isi_pengumuman');
             $table->foreignId('user_id');
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('umkms');
+        Schema::dropIfExists('announcements');
     }
 };

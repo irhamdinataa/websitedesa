@@ -47,6 +47,7 @@ class AdminUmkmController extends Controller
             'foto.mimes'            => 'Format foto yang di izinkan Jpeg, Jpg, Png',
             'produk.required'       => 'Wajib menambahkan nama produk !',
             'slug.required'         => 'Slug tidak boleh kosong !',
+            'slug.unique'           => 'Slug tidak boleh sama !',
             'harga.required'        => 'Wajib menambahkan harga !',
             'harga.numeric'         => 'Tambahkan format angka !',
             'no_hp.required'        => 'Wajib menambahkan No Hp !',
@@ -54,11 +55,11 @@ class AdminUmkmController extends Controller
             'deskripsi.required'    => 'Wajib menambahkan deskripsi produk !'
         ]);
 
-        if($request->hasFile('foto')){
+        if ($request->hasFile('foto')) {
             $path       = 'img-produk/';
             $file       = $request->file('foto');
-            $extension  = $file->getClientOriginalExtension(); 
-            $fileName   = uniqid() . '.' . $extension; 
+            $extension  = $file->getClientOriginalExtension();
+            $fileName   = uniqid() . '.' . $extension;
             $foto     = $file->storeAs($path, $fileName, 'public');
         } else {
             $foto     = null;
@@ -70,8 +71,8 @@ class AdminUmkmController extends Controller
                 ->withInput();
         }
 
-        $umkm = Umkm::create([
-            'foto'          =>  $path . $fileName, 
+        Umkm::create([
+            'foto'          =>  $path . $fileName,
             'produk'        =>  $request->produk,
             'slug'          =>  $request->slug,
             'harga'         =>  $request->harga,
@@ -116,18 +117,18 @@ class AdminUmkmController extends Controller
             'deskripsi.required'    => 'Wajib menambahkan deskripsi produk !'
         ]);
 
-        if($request->slug != $umkm->slug){
+        if ($request->slug != $umkm->slug) {
             $umkm->slug  = 'required|unique:umkms';
         }
 
-        if($request->hasFile('foto')){
-            if($umkm->foto){
-                unlink('.' .Storage::url($umkm->foto));
+        if ($request->hasFile('foto')) {
+            if ($umkm->foto) {
+                unlink('.' . Storage::url($umkm->foto));
             }
             $path       = 'img-produk/';
             $file       = $request->file('foto');
-            $extension  = $file->getClientOriginalExtension(); 
-            $fileName   = uniqid() . '.' . $extension; 
+            $extension  = $file->getClientOriginalExtension();
+            $fileName   = uniqid() . '.' . $extension;
             $foto     = $file->storeAs($path, $fileName, 'public');
         } else {
             $validator = Validator::make($request->all(), [
@@ -173,18 +174,18 @@ class AdminUmkmController extends Controller
     public function destroy($id)
     {
         $umkm = Umkm::find($id);
-        unlink('.'.Storage::url($umkm->foto));
+        unlink('.' . Storage::url($umkm->foto));
         $umkm->delete();
 
         return redirect('/admin/umkm')->with('success', 'Berhasil menghapus produk umkm');
     }
 
     /**
-    * Generate slug / permalink by Produk.
-    */
-   public function slug(Request $request)
-   {
-       $slug = SlugService::createSlug(Umkm::class, 'slug', $request->produk);
-       return response()->json(['slug' => $slug]);
-   }
+     * Generate slug / permalink by Produk.
+     */
+    public function slug(Request $request)
+    {
+        $slug = SlugService::createSlug(Umkm::class, 'slug', $request->produk);
+        return response()->json(['slug' => $slug]);
+    }
 }

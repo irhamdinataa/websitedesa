@@ -10,7 +10,7 @@
                     <h5 class="card-title fw-semibold text-white">Edit Produk UMKM</h5>
                 </div>
                 <div class="col-6 text-right">
-                    <a href="/admin/berita" type="button" class="btn btn-warning float-end">Kembali</a>
+                    <a href="/admin/umkm" type="button" class="btn btn-warning float-end">Kembali</a>
                 </div>
             </div>
         </div>
@@ -52,7 +52,10 @@
                         </div>
                         <div class="mb-3">
                             <label for="no_hp" class="form-label">No Hp Penjual <span style="color: red">*</span></label>
-                            <input type="number" class="form-control" name="no_hp" id="no_hp" value="{{ old('no_hp',$umkm->no_hp) }}">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">+62</span>
+                                <input type="number" class="form-control" name="no_hp" id="no_hp" value="{{ old('no_hp', $umkm->no_hp) }}">
+                            </div>
                             @error('no_hp')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

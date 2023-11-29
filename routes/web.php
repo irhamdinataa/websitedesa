@@ -4,35 +4,43 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\KontakController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\WilayahController;
+use App\Http\Controllers\AnggaranController;
 use App\Http\Controllers\DataDesaController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PetaDesaController;
 use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\AdminPetaController;
+use App\Http\Controllers\AdminUmkmController;
 use App\Http\Controllers\AdminAgamaController;
 use App\Http\Controllers\AdminBeritaController;
+use App\Http\Controllers\AdminKontakController;
+use App\Http\Controllers\AdminProfilController;
 use App\Http\Controllers\AdminSliderController;
 use App\Http\Controllers\AdminCommentController;
-use App\Http\Controllers\AdminIdentitasSitusController;
+use App\Http\Controllers\AdminGalleryController;
+use App\Http\Controllers\AdminLayananController;
 use App\Http\Controllers\AdminSejarahController;
 use App\Http\Controllers\AdminWilayahController;
+use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\AdminAnggaranController;
 use App\Http\Controllers\AdminKategoriController;
 use App\Http\Controllers\AdminVisiMisiController;
 use App\Http\Controllers\PerangkatDesaController;
 use App\Http\Controllers\AdminPekerjaanController;
+use App\Http\Controllers\AdminAnnouncementController;
 use App\Http\Controllers\AdminJenisKelaminController;
-use App\Http\Controllers\AdminKontakController;
-use App\Http\Controllers\AdminPerangkatDesaController;
-use App\Http\Controllers\AdminPetaController;
-use App\Http\Controllers\AdminProfilController;
-use App\Http\Controllers\AdminUmkmController;
 use App\Http\Controllers\AdminVideoProfileController;
-use App\Http\Controllers\KontakController;
-use App\Http\Controllers\UmkmController;
+use App\Http\Controllers\AdminPerangkatDesaController;
+use App\Http\Controllers\AdminIdentitasSitusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +80,17 @@ Route::get('/umkm/{umkm:slug}', [UmkmController::class, 'detail']);
 
 Route::get('/kontak', [KontakController::class, 'index']);
 
+Route::get('/layanan', [LayananController::class, 'index']);
+
+Route::get('/gallery', [GalleryController::class, 'index']);
+
+Route::get('/pengumuman', [AnnouncementController::class, 'index']);
+Route::get('/pengumuman/{pengumuman:slug}', [AnnouncementController::class, 'detail']);
+
+Route::get('/apbdesa', [AnggaranController::class, 'index']);
+Route::get('/apbdesa/{anggaran:slug}', [AnggaranController::class, 'detail']);
+
+//Admin Dashboard 
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
@@ -125,3 +144,13 @@ Route::put('/admin/identitas-situs/{id}', [AdminIdentitasSitusController::class,
 Route::get('/admin/profil/', [AdminProfilController::class, 'index']);
 Route::put('/admin/profil/{id}', [AdminProfilController::class, 'update']);
 Route::put('/admin/profil/', [AdminProfilController::class, 'changePassword']);
+
+Route::resource('/admin/layanan', AdminLayananController::class);
+
+Route::resource('/admin/gallery', AdminGalleryController::class);
+
+Route::get('/admin/pengumuman/slug', [AdminAnnouncementController::class, 'slug']);
+Route::resource('/admin/pengumuman', AdminAnnouncementController::class);
+
+Route::get('/admin/apbdes', [AdminAnggaranController::class, 'slug']);
+Route::resource('/admin/apbdes', AdminAnggaranController::class);

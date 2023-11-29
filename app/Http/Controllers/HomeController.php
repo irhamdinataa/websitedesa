@@ -9,6 +9,7 @@ use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 
+
 class HomeController extends Controller
 {
     /**
@@ -28,9 +29,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $today = Carbon::today('Asia/Jakarta');
+        $query = Berita::whereDate('updated_at', $today)->get();
+        $viewsToday = $query->sum('views');
+
         $totalBerita    = Berita::count();
         $totalProduk    = Umkm::count();
-        $viewsToday     = Berita::whereDate('created_at', Carbon::today())->sum('views');
         $beritas        = Berita::orderBy('created_at', 'DESC')->take(10)->get();
         $komentars      = Comment::orderBy('created_at', 'DESC')->take(10)->get();
 

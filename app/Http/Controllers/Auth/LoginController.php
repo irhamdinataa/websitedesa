@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        alert()->toast('Selamat Datang ' .$user->name, 'success');
+        alert()->toast('Anda Login Sebagai ' .$user->name, 'success');
 
         return redirect($this->redirectTo);
     }

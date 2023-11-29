@@ -26,12 +26,12 @@
                                         <tr>
                                             <td>Deskripsi</td>
                                             <td>:</td>
-                                            <td>{{ $umkm->deskripsi }}</td>
+                                            <td>{!! $umkm->deskripsi !!}</td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 
-                                <a href="https://wa.me/{{ $umkm->no_hp }}" class="btn btn-success mt-3" role="button"><i class="bi bi-whatsapp"></i> Hubungi Penjual</a>
+                                <a href="https://wa.me/+62{{ $umkm->no_hp }}" class="btn btn-success mt-3" role="button"><i class="bi bi-whatsapp"></i> Hubungi Penjual</a>
                             </div>
                         </div>
                     </div>
