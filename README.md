@@ -93,3 +93,5 @@ Demo Video : https://youtu.be/wY13QzFiipY?si=PE2Bx0N6XvA3q8de
 ![Screenshot_1134](https://github.com/dwipurnomo12/portal-desa/assets/105181667/e7bfc102-c141-4bcb-88cd-f54faa9a0dfc)
 ![Screenshot_1133](https://github.com/dwipurnomo12/portal-desa/assets/105181667/dbbe4d82-f58c-4d43-9625-f28fb4039613)
 
+https://inovasicode.com/cara-menjalankan-project-laravel-dari-file-zip-di-localhost/
+https://inovasicode.com/upload-project-laravel-ke-hosting-cpanel/
